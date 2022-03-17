@@ -84,7 +84,7 @@ INSERT INTO Videos VALUES (15, '/amazon/S3/bucken_name/videoid12');
 INSERT INTO Videos VALUES (16, '/amazon/S3/bucken_name/videoid12');
 
 
---Poll_Post(Post_id, num_options)
+-- Poll_Post(Post_id, num_options)
 CREATE TABLE IF NOT EXISTS Poll_Post  ( -- [Poll_Post Table]
     post_id INT UNSIGNED NOT NULL,
     num_options INT NOT NULL,
@@ -96,7 +96,7 @@ INSERT INTO Poll_Post VALUES (10, 4);
 INSERT INTO Poll_Post VALUES (11, 4);
 INSERT INTO Poll_Post VALUES (12, 3);
 
---poll_options(Post_id, option_id, option_name, vote_count)
+-- poll_options(Post_id, option_id, option_name, vote_count)
 CREATE TABLE IF NOT EXISTS Poll_Options  ( -- [Poll_Options Table]
     post_id INT UNSIGNED NOT NULL,
     option_id INT NOT NULL,
@@ -105,25 +105,25 @@ CREATE TABLE IF NOT EXISTS Poll_Options  ( -- [Poll_Options Table]
     PRIMARY KEY (post_id, option_id)
 );
 
---'UVA Media is the Next Big Thing!! yes or no?
+-- 'UVA Media is the Next Big Thing!! yes or no?
 INSERT INTO Poll_Options VALUES (9, 0, 'yes', 0);
 INSERT INTO Poll_Options VALUES (9, 1, 'no', 0);
---'Best soccer player?'
+-- 'Best soccer player?'
 INSERT INTO Poll_Options VALUES (10, 0, 'Messi', 0);
 INSERT INTO Poll_Options VALUES (10, 1, 'Ronaldo', 0);
 INSERT INTO Poll_Options VALUES (10, 2, 'Maguire', 0);
 INSERT INTO Poll_Options VALUES (10, 3, 'Mbappe', 0);
---'Best bastetball player in the East?
+-- 'Best bastetball player in the East?
 INSERT INTO Poll_Options VALUES (11, 0, 'Tatum', 0);
 INSERT INTO Poll_Options VALUES (11, 1, 'Embiid', 0);
 INSERT INTO Poll_Options VALUES (11, 2, 'Antetokounmpo', 0);
 INSERT INTO Poll_Options VALUES (11, 3, 'Durant', 0);
---favorite food?
+-- favorite food?
 INSERT INTO Poll_Options VALUES (12, 0, 'Tacos', 0);
 INSERT INTO Poll_Options VALUES (12, 1, 'Pizza', 0);
 INSERT INTO Poll_Options VALUES (12, 2, 'Ice Cream', 0);
 
---ActiveUser(ActivePhoneNumber, points)
+-- ActiveUser(ActivePhoneNumber, points)
 CREATE TABLE IF NOT EXISTS Active_User  ( -- [Active_User Table]
     phone_number BIGINT NOT NULL,
     points INT NOT NULL,
@@ -137,7 +137,7 @@ INSERT INTO Active_User VALUES (2035550303, 3, 0);
 INSERT INTO Active_User VALUES (5715550404, 22, 1);
 
 
---BannedUser(BannedPhoneNumber, Reason)
+-- BannedUser(BannedPhoneNumber, Reason)
 CREATE TABLE IF NOT EXISTS Banned_User  ( -- [Banned_User Table]
     phone_number BIGINT NOT NULL,
     reason VARCHAR(99) NOT NULL,
@@ -148,11 +148,11 @@ CREATE TABLE IF NOT EXISTS Banned_User  ( -- [Banned_User Table]
 INSERT INTO Banned_User VALUES (2035550505, "profanity", 3);
 INSERT INTO Banned_User VALUES (7035550606, "not cool enough", 3);
 
---SuspendedUser(BannedPhoneNumber, Reason) 
+-- SuspendedUser(BannedPhoneNumber, Reason) 
 CREATE TABLE IF NOT EXISTS Suspended_User  ( -- [Suspended_User Table]
     phone_number BIGINT NOT NULL,
     reason VARCHAR(99) NOT NULL,
-    sus_time INT NOT NULL, --in seconds
+    sus_time INT NOT NULL, -- in seconds
     reports INT NOT NULL,
     PRIMARY KEY (phone_number)
 );
@@ -160,7 +160,7 @@ CREATE TABLE IF NOT EXISTS Suspended_User  ( -- [Suspended_User Table]
 INSERT INTO Suspended_User VALUES (4345550707, "inapropriate", 604800, 2);
 INSERT INTO Suspended_User VALUES (5715550808, "illegal", 1209600, 2);
 
---AdminUser(AdminPhoneNumber, username) 
+-- AdminUser(AdminPhoneNumber, username) 
 CREATE TABLE IF NOT EXISTS Admin_User  ( -- [Admin_User Table]
     phone_number BIGINT NOT NULL,
     username VARCHAR(30) NOT NULL,
