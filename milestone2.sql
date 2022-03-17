@@ -31,15 +31,20 @@ INSERT INTO Post VALUES (15, CURRENT_TIMESTAMP - 80, 'best goal ive scored!', 0,
 
 
 
--- Comment(Post_id, comment_text) 
+-- Comment(post_id, comment_id, comment_text) 
 CREATE TABLE IF NOT EXISTS Comment ( -- [Comment Table]
+    comment_id INT UNSIGNED NOT NULL AUTO_INCREMENT, 
     post_id INT UNSIGNED NOT NULL,
-    post_text VARCHAR(99) NOT NULL,
-    PRIMARY KEY (post_id)
+    comment_time Datetime NOT NULL,
+    comment_text VARCHAR(99) NOT NULL,
+    PRIMARY KEY (comment_id)
 );
-INSERT INTO Comment VALUES (NULL, CURRENT_TIMESTAMP - 65, 'what do you think of this video', 0, 'video');
-INSERT INTO Comment VALUES (NULL, CURRENT_TIMESTAMP - 65, 'what do you think of this video', 0, 'video');
-INSERT INTO Comment VALUES (NULL, CURRENT_TIMESTAMP - 65, 'what do you think of this video', 0, 'video');
+INSERT INTO Comment VALUES (0, 0, CURRENT_TIMESTAMP - 65, 'cool first post, mike!', 0, 'video');
+INSERT INTO Comment VALUES (1, 4, CURRENT_TIMESTAMP - 65, 'justin, thats a cool picture!', 0, 'video');
+INSERT INTO Comment VALUES (2, 7, CURRENT_TIMESTAMP - 65, 'kunal looks cool!', 0, 'video');
+INSERT INTO Comment VALUES (3, 5, CURRENT_TIMESTAMP - 65, 'I liked the first picture mor than this one, justin', 0, 'video');
+INSERT INTO Comment VALUES (4, 5, CURRENT_TIMESTAMP - 65, 'this one is still cool tho', 0, 'video');
+INSERT INTO Comment VALUES (5, 13, CURRENT_TIMESTAMP - 65, 'funny cat video! good one!', 0, 'video');
 
 
 -- Text_Post(Post_id, color)
@@ -48,6 +53,11 @@ CREATE TABLE IF NOT EXISTS Text_Post ( -- [Text_Post Table]
     color VARCHAR(30) NOT NULL,
     PRIMARY KEY (post_id)
 );
+INSERT INTO Text_Post VALUES (0, 'blue');
+INSERT INTO Text_Post VALUES (1, 'blue');
+INSERT INTO Text_Post VALUES (2, 'red');
+INSERT INTO Text_Post VALUES (3, 'green');
+
 
 -- Images(Post_id, image)
 CREATE TABLE IF NOT EXISTS Images ( -- [Images Table]
@@ -55,6 +65,11 @@ CREATE TABLE IF NOT EXISTS Images ( -- [Images Table]
     content varchar(1024),  -- store a reference to where the image is saved. 
     PRIMARY KEY (post_id)
 );
+INSERT INTO Images VALUES (4, '/amazon/S3/bucken_name/picture_id4');
+INSERT INTO Images VALUES (5, '/amazon/S3/bucken_name/picture_id5');
+INSERT INTO Images VALUES (6, '/amazon/S3/bucken_name/picture_id6');
+INSERT INTO Images VALUES (7, '/amazon/S3/bucken_name/picture_id7');
+
 
 -- Videos(Post_id, video)
 CREATE TABLE IF NOT EXISTS Videos ( -- [Images Table]
@@ -62,6 +77,11 @@ CREATE TABLE IF NOT EXISTS Videos ( -- [Images Table]
     content varchar(1024),  -- store a reference to where the video is saved. 
     PRIMARY KEY (post_id)
 );
+INSERT INTO Videos VALUES (12, '/amazon/S3/bucken_name/videoid12');
+INSERT INTO Videos VALUES (13, '/amazon/S3/bucken_name/videoid12');
+INSERT INTO Videos VALUES (14, '/amazon/S3/bucken_name/videoid12');
+INSERT INTO Videos VALUES (15, '/amazon/S3/bucken_name/videoid12');
+
 
 --Poll_Post(Post_id, num_options)
 CREATE TABLE IF NOT EXISTS Poll_Post  ( -- [Poll_Post Table]
