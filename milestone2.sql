@@ -96,7 +96,7 @@ INSERT INTO Poll_Post VALUES (10, 4);
 INSERT INTO Poll_Post VALUES (11, 4);
 INSERT INTO Poll_Post VALUES (12, 3);
 
---poll_options(Post_id, option_id, option_name, vote_count)
+-- poll_options(Post_id, option_id, option_name, vote_count)
 CREATE TABLE IF NOT EXISTS Poll_Options  ( -- [Poll_Options Table]
     post_id INT UNSIGNED NOT NULL,
     option_id INT NOT NULL,
@@ -123,7 +123,7 @@ INSERT INTO Poll_Options VALUES (12, 0, 'Tacos', 0);
 INSERT INTO Poll_Options VALUES (12, 1, 'Pizza', 0);
 INSERT INTO Poll_Options VALUES (12, 2, 'Ice Cream', 0);
 
---ActiveUser(ActivePhoneNumber, points)
+-- ActiveUser(ActivePhoneNumber, points)
 CREATE TABLE IF NOT EXISTS Active_User  ( -- [Active_User Table]
     phone_number BIGINT NOT NULL,
     points INT NOT NULL,
@@ -137,7 +137,7 @@ INSERT INTO Active_User VALUES (2035550303, 3, 0);
 INSERT INTO Active_User VALUES (5715550404, 22, 1);
 
 
---BannedUser(BannedPhoneNumber, Reason)
+-- BannedUser(BannedPhoneNumber, Reason)
 CREATE TABLE IF NOT EXISTS Banned_User  ( -- [Banned_User Table]
     phone_number BIGINT NOT NULL,
     reason VARCHAR(99) NOT NULL,
@@ -148,7 +148,7 @@ CREATE TABLE IF NOT EXISTS Banned_User  ( -- [Banned_User Table]
 INSERT INTO Banned_User VALUES (2035550505, "profanity", 3);
 INSERT INTO Banned_User VALUES (7035550606, "not cool enough", 3);
 
---SuspendedUser(BannedPhoneNumber, Reason) 
+-- SuspendedUser(BannedPhoneNumber, Reason) 
 CREATE TABLE IF NOT EXISTS Suspended_User  ( -- [Suspended_User Table]
     phone_number BIGINT NOT NULL,
     reason VARCHAR(99) NOT NULL,
