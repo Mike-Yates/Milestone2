@@ -152,7 +152,7 @@ INSERT INTO Banned_User VALUES (7035550606, "not cool enough", 3);
 CREATE TABLE IF NOT EXISTS Suspended_User  ( -- [Suspended_User Table]
     phone_number BIGINT NOT NULL,
     reason VARCHAR(99) NOT NULL,
-    sus_time INT NOT NULL, --in seconds
+    sus_time INT NOT NULL, -- in seconds
     reports INT NOT NULL,
     PRIMARY KEY (phone_number)
 );
@@ -160,7 +160,7 @@ CREATE TABLE IF NOT EXISTS Suspended_User  ( -- [Suspended_User Table]
 INSERT INTO Suspended_User VALUES (4345550707, "inapropriate", 604800, 2);
 INSERT INTO Suspended_User VALUES (5715550808, "illegal", 1209600, 2);
 
---AdminUser(AdminPhoneNumber, username) 
+-- AdminUser(AdminPhoneNumber, username) 
 CREATE TABLE IF NOT EXISTS Admin_User  ( -- [Admin_User Table]
     phone_number BIGINT NOT NULL,
     username VARCHAR(30) NOT NULL,
