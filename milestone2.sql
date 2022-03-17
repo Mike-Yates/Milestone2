@@ -39,12 +39,12 @@ CREATE TABLE IF NOT EXISTS Comment ( -- [Comment Table]
     comment_text VARCHAR(99) NOT NULL,
     PRIMARY KEY (comment_id)
 );
-INSERT INTO Comment VALUES (0, 0, CURRENT_TIMESTAMP - 65, 'cool first post, mike!', 0, 'video');
-INSERT INTO Comment VALUES (1, 4, CURRENT_TIMESTAMP - 65, 'justin, thats a cool picture!', 0, 'video');
-INSERT INTO Comment VALUES (2, 7, CURRENT_TIMESTAMP - 65, 'kunal looks cool!', 0, 'video');
-INSERT INTO Comment VALUES (3, 5, CURRENT_TIMESTAMP - 65, 'I liked the first picture mor than this one, justin', 0, 'video');
-INSERT INTO Comment VALUES (4, 5, CURRENT_TIMESTAMP - 65, 'this one is still cool tho', 0, 'video');
-INSERT INTO Comment VALUES (5, 13, CURRENT_TIMESTAMP - 65, 'funny cat video! good one!', 0, 'video');
+INSERT INTO Comment VALUES (0, 0, CURRENT_TIMESTAMP - 65, 'cool first post, mike!');
+INSERT INTO Comment VALUES (1, 4, CURRENT_TIMESTAMP - 65, 'justin, thats a cool picture!');
+INSERT INTO Comment VALUES (2, 7, CURRENT_TIMESTAMP - 65, 'kunal looks cool!');
+INSERT INTO Comment VALUES (3, 5, CURRENT_TIMESTAMP - 65, 'I liked the first picture mor than this one, justin');
+INSERT INTO Comment VALUES (4, 5, CURRENT_TIMESTAMP - 65, 'this one is still cool tho');
+INSERT INTO Comment VALUES (5, 13, CURRENT_TIMESTAMP - 65, 'funny cat video! good one!');
 
 
 -- Text_Post(Post_id, color)
