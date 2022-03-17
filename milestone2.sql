@@ -9,25 +9,25 @@ CREATE TABLE IF NOT EXISTS Post  ( -- [Post Table]
     post_type VARCHAR(10) NOT NULL, -- text, poll, video, or picture
     PRIMARY KEY (post_id)
 );
-INSERT INTO Post VALUES (0, 20220313184701, 'my name is mike, and this is my first post.', 0, 'text');
-INSERT INTO Post VALUES (1, 20220314184711, 'my name is mike, and this is my second post.', 0, 'text');
-INSERT INTO Post VALUES (2, 20220314184721, 'wow! i have 99 characters to work with', 0, 'text');
-INSERT INTO Post VALUES (3, 20220314184751, 'some wierd characters are: !@#$%^&*(', 0, 'text');
+INSERT INTO Post VALUES (1, 20220313184701, 'my name is mike, and this is my first post.', 0, 'text');
+INSERT INTO Post VALUES (2, 20220314184711, 'my name is mike, and this is my second post.', 0, 'text');
+INSERT INTO Post VALUES (3, 20220314184721, 'wow! i have 99 characters to work with', 0, 'text');
+INSERT INTO Post VALUES (4, 20220314184751, 'some wierd characters are: !@#$%^&*(', 0, 'text');
 
-INSERT INTO Post VALUES (4, 20220315184722, 'my name is justin, check out this picture!!', 0, 'picture');
-INSERT INTO Post VALUES (5, 20220315184754, 'my name is justin, check out this second picture!!', 0, 'picture');
-INSERT INTO Post VALUES (6, 20220316184701, 'picture of my dog!!', 0, 'picture');
-INSERT INTO Post VALUES (7, 20220316184755, 'Heres another picture of Kunal!', 0, 'picture');
+INSERT INTO Post VALUES (5, 20220315184722, 'my name is justin, check out this picture!!', 0, 'picture');
+INSERT INTO Post VALUES (6, 20220315184754, 'my name is justin, check out this second picture!!', 0, 'picture');
+INSERT INTO Post VALUES (7, 20220316184701, 'picture of my dog!!', 0, 'picture');
+INSERT INTO Post VALUES (8, 20220316184755, 'Heres another picture of Kunal!', 0, 'picture');
 
-INSERT INTO Post VALUES (8, 20220316184757, 'UVA Media is the Next Big Thing!! yes or no?', 0, 'poll');
-INSERT INTO Post VALUES (9, 20220317184710, 'Best soccer player?', 0, 'poll');
-INSERT INTO Post VALUES (10, 20220317184721, 'Best bastetball player in the East?', 0, 'poll');
-INSERT INTO Post VALUES (11, 20220317184730, 'favorite food?', 0, 'poll');
+INSERT INTO Post VALUES (9, 20220316184757, 'UVA Media is the Next Big Thing!! yes or no?', 0, 'poll');
+INSERT INTO Post VALUES (10, 20220317184710, 'Best soccer player?', 0, 'poll');
+INSERT INTO Post VALUES (11, 20220317184721, 'Best bastetball player in the East?', 0, 'poll');
+INSERT INTO Post VALUES (12, 20220317184730, 'favorite food?', 0, 'poll');
 
-INSERT INTO Post VALUES (12, 20220317184745, 'what do you think of this video', 0, 'video');
-INSERT INTO Post VALUES (13, 20220317184747, 'quick video of my cat!', 0, 'video');
-INSERT INTO Post VALUES (14, 20220317184749, 'me doing the rainbow remix', 0, 'video');
-INSERT INTO Post VALUES (15, 20220317184757, 'best goal ive scored!', 0, 'video');
+INSERT INTO Post VALUES (13, 20220317184745, 'what do you think of this video', 0, 'video');
+INSERT INTO Post VALUES (14, 20220317184747, 'quick video of my cat!', 0, 'video');
+INSERT INTO Post VALUES (15, 20220317184749, 'me doing the rainbow remix', 0, 'video');
+INSERT INTO Post VALUES (16, 20220317184757, 'best goal ive scored!', 0, 'video');
 
 -- -80 = 35 seconds earlier 
 
