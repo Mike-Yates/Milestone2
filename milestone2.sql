@@ -10,9 +10,25 @@ CREATE TABLE IF NOT EXISTS Post  ( -- [Post Table]
     PRIMARY KEY (post_id)
 );
 INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 5, 'my name is mike, and this is my first post.', 0, 'text');
-INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 10, 'my name is justin, check out this picture!!', 0, 'picture');
-INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 20, 'UVA Media is the Next Big Thing!! yes or no?', 0, 'poll');
-INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 30, 'what do you think of this video', 0, 'video');
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 10, 'my name is mike, and this is my second post.', 0, 'text');
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 15, 'wow! i have 99 characters to work with', 0, 'text');
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 20, 'some wierd characters are: !@#$%^&*(', 0, 'text');
+
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 25, 'my name is justin, check out this picture!!', 0, 'picture');
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 30, 'my name is justin, check out this second picture!!', 0, 'picture');
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 35, 'picture of my dog!!', 0, 'picture');
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 40, 'Heres another picture of Kunal!', 0, 'picture');
+
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 45, 'UVA Media is the Next Big Thing!! yes or no?', 0, 'poll');
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 50, 'Best soccer player?', 0, 'poll');
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 55, 'Best bastetball player in the East?', 0, 'poll');
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 60, 'favorite food?', 0, 'poll');
+
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 65, 'what do you think of this video', 0, 'video');
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 70, 'quick video of my cat!', 0, 'video');
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 75, 'me doing the rainbow remix', 0, 'video');
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 80, 'best goal ive scored!', 0, 'video');
+
 
 
 -- Comment(Post_id, comment_text) 
@@ -21,6 +37,7 @@ CREATE TABLE IF NOT EXISTS Comment ( -- [Comment Table]
     post_text VARCHAR(99) NOT NULL,
     PRIMARY KEY (post_id)
 );
+
 
 -- Text_Post(Post_id, color)
 CREATE TABLE IF NOT EXISTS Text_Post ( -- [Text_Post Table]
