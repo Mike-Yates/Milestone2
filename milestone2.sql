@@ -84,7 +84,7 @@ INSERT INTO Videos VALUES (15, '/amazon/S3/bucken_name/videoid12');
 INSERT INTO Videos VALUES (16, '/amazon/S3/bucken_name/videoid12');
 
 
---Poll_Post(Post_id, num_options)
+-- Poll_Post(Post_id, num_options)
 CREATE TABLE IF NOT EXISTS Poll_Post  ( -- [Poll_Post Table]
     post_id INT UNSIGNED NOT NULL,
     num_options INT NOT NULL,
@@ -105,20 +105,20 @@ CREATE TABLE IF NOT EXISTS Poll_Options  ( -- [Poll_Options Table]
     PRIMARY KEY (post_id, option_id)
 );
 
---'UVA Media is the Next Big Thing!! yes or no?
+-- UVA Media is the Next Big Thing!! yes or no?
 INSERT INTO Poll_Options VALUES (9, 0, 'yes', 0);
 INSERT INTO Poll_Options VALUES (9, 1, 'no', 0);
---'Best soccer player?'
+-- Best soccer player?
 INSERT INTO Poll_Options VALUES (10, 0, 'Messi', 0);
 INSERT INTO Poll_Options VALUES (10, 1, 'Ronaldo', 0);
 INSERT INTO Poll_Options VALUES (10, 2, 'Maguire', 0);
 INSERT INTO Poll_Options VALUES (10, 3, 'Mbappe', 0);
---'Best bastetball player in the East?
+-- Best bastetball player in the East?
 INSERT INTO Poll_Options VALUES (11, 0, 'Tatum', 0);
 INSERT INTO Poll_Options VALUES (11, 1, 'Embiid', 0);
 INSERT INTO Poll_Options VALUES (11, 2, 'Antetokounmpo', 0);
 INSERT INTO Poll_Options VALUES (11, 3, 'Durant', 0);
---favorite food?
+-- favorite food?
 INSERT INTO Poll_Options VALUES (12, 0, 'Tacos', 0);
 INSERT INTO Poll_Options VALUES (12, 1, 'Pizza', 0);
 INSERT INTO Poll_Options VALUES (12, 2, 'Ice Cream', 0);
