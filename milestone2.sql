@@ -40,12 +40,12 @@ CREATE TABLE IF NOT EXISTS Comment ( -- [Comment Table]
     comment_text VARCHAR(99) NOT NULL,
     PRIMARY KEY (comment_id)
 );
-INSERT INTO Comment VALUES (0, 0, 20220315184730, 'cool first post, mike!');
-INSERT INTO Comment VALUES (1, 4, 20220315184745, 'justin, thats a cool picture!');
-INSERT INTO Comment VALUES (2, 7, 20220316184720, 'kunal looks cool!');
-INSERT INTO Comment VALUES (3, 5, 20220316184740, 'I liked the first picture mor than this one, justin');
-INSERT INTO Comment VALUES (4, 5, 20220317184715, 'this one is still cool tho');
-INSERT INTO Comment VALUES (5, 13, 20220317184730, 'funny cat video! good one!');
+INSERT INTO Comment VALUES (1, 0, 20220315184730, 'cool first post, mike!');
+INSERT INTO Comment VALUES (2, 4, 20220315184745, 'justin, thats a cool picture!');
+INSERT INTO Comment VALUES (3, 7, 20220316184720, 'kunal looks cool!');
+INSERT INTO Comment VALUES (4, 5, 20220316184740, 'I liked the first picture mor than this one, justin');
+INSERT INTO Comment VALUES (5, 5, 20220317184715, 'this one is still cool tho');
+INSERT INTO Comment VALUES (6, 13, 20220317184730, 'funny cat video! good one!');
 
 
 -- Text_Post(Post_id, color)
@@ -54,10 +54,10 @@ CREATE TABLE IF NOT EXISTS Text_Post ( -- [Text_Post Table]
     color VARCHAR(30) NOT NULL,
     PRIMARY KEY (post_id)
 );
-INSERT INTO Text_Post VALUES (0, 'blue');
 INSERT INTO Text_Post VALUES (1, 'blue');
-INSERT INTO Text_Post VALUES (2, 'red');
-INSERT INTO Text_Post VALUES (3, 'green');
+INSERT INTO Text_Post VALUES (2, 'blue');
+INSERT INTO Text_Post VALUES (3, 'red');
+INSERT INTO Text_Post VALUES (4, 'green');
 
 
 -- Images(Post_id, image)
@@ -66,10 +66,10 @@ CREATE TABLE IF NOT EXISTS Images ( -- [Images Table]
     content varchar(1024),  -- store a reference to where the image is saved. 
     PRIMARY KEY (post_id)
 );
-INSERT INTO Images VALUES (4, '/amazon/S3/bucken_name/picture_id4');
-INSERT INTO Images VALUES (5, '/amazon/S3/bucken_name/picture_id5');
-INSERT INTO Images VALUES (6, '/amazon/S3/bucken_name/picture_id6');
-INSERT INTO Images VALUES (7, '/amazon/S3/bucken_name/picture_id7');
+INSERT INTO Images VALUES (5, '/amazon/S3/bucken_name/picture_id4');
+INSERT INTO Images VALUES (6, '/amazon/S3/bucken_name/picture_id5');
+INSERT INTO Images VALUES (7, '/amazon/S3/bucken_name/picture_id6');
+INSERT INTO Images VALUES (8, '/amazon/S3/bucken_name/picture_id7');
 
 
 -- Videos(Post_id, video)
@@ -78,10 +78,10 @@ CREATE TABLE IF NOT EXISTS Videos ( -- [Images Table]
     content varchar(1024),  -- store a reference to where the video is saved. 
     PRIMARY KEY (post_id)
 );
-INSERT INTO Videos VALUES (12, '/amazon/S3/bucken_name/videoid12');
 INSERT INTO Videos VALUES (13, '/amazon/S3/bucken_name/videoid12');
 INSERT INTO Videos VALUES (14, '/amazon/S3/bucken_name/videoid12');
 INSERT INTO Videos VALUES (15, '/amazon/S3/bucken_name/videoid12');
+INSERT INTO Videos VALUES (16, '/amazon/S3/bucken_name/videoid12');
 
 
 --Poll_Post(Post_id, num_options)
@@ -91,10 +91,10 @@ CREATE TABLE IF NOT EXISTS Poll_Post  ( -- [Poll_Post Table]
     PRIMARY KEY (post_id)
 );
 
-INSERT INTO Poll_Post VALUES (8, 2);
-INSERT INTO Poll_Post VALUES (9, 4);
+INSERT INTO Poll_Post VALUES (9, 2);
 INSERT INTO Poll_Post VALUES (10, 4);
-INSERT INTO Poll_Post VALUES (11, 3);
+INSERT INTO Poll_Post VALUES (11, 4);
+INSERT INTO Poll_Post VALUES (12, 3);
 
 --poll_options(Post_id, option_id, option_name, vote_count)
 CREATE TABLE IF NOT EXISTS Poll_Options  ( -- [Poll_Options Table]
@@ -106,66 +106,70 @@ CREATE TABLE IF NOT EXISTS Poll_Options  ( -- [Poll_Options Table]
 );
 
 --'UVA Media is the Next Big Thing!! yes or no?
-INSERT INTO Poll_Options VALUES (8, 0, 'yes', 0);
-INSERT INTO Poll_Options VALUES (8, 1, 'no', 0);
+INSERT INTO Poll_Options VALUES (9, 0, 'yes', 0);
+INSERT INTO Poll_Options VALUES (9, 1, 'no', 0);
 --'Best soccer player?'
-INSERT INTO Poll_Options VALUES (9, 0, 'Messi', 0);
-INSERT INTO Poll_Options VALUES (9, 1, 'Ronaldo', 0);
-INSERT INTO Poll_Options VALUES (9, 2, 'Maguire', 0);
-INSERT INTO Poll_Options VALUES (9, 3, 'Mbappe', 0);
+INSERT INTO Poll_Options VALUES (10, 0, 'Messi', 0);
+INSERT INTO Poll_Options VALUES (10, 1, 'Ronaldo', 0);
+INSERT INTO Poll_Options VALUES (10, 2, 'Maguire', 0);
+INSERT INTO Poll_Options VALUES (10, 3, 'Mbappe', 0);
 --'Best bastetball player in the East?
-INSERT INTO Poll_Options VALUES (10, 0, 'Tatum', 0);
-INSERT INTO Poll_Options VALUES (10, 1, 'Embiid', 0);
-INSERT INTO Poll_Options VALUES (10, 2, 'Antetokounmpo', 0);
-INSERT INTO Poll_Options VALUES (10, 3, 'Durant', 0);
+INSERT INTO Poll_Options VALUES (11, 0, 'Tatum', 0);
+INSERT INTO Poll_Options VALUES (11, 1, 'Embiid', 0);
+INSERT INTO Poll_Options VALUES (11, 2, 'Antetokounmpo', 0);
+INSERT INTO Poll_Options VALUES (11, 3, 'Durant', 0);
 --favorite food?
-INSERT INTO Poll_Options VALUES (11, 0, 'Tacos', 0);
-INSERT INTO Poll_Options VALUES (11, 1, 'Pizza', 0);
-INSERT INTO Poll_Options VALUES (11, 2, 'Ice Cream', 0);
+INSERT INTO Poll_Options VALUES (12, 0, 'Tacos', 0);
+INSERT INTO Poll_Options VALUES (12, 1, 'Pizza', 0);
+INSERT INTO Poll_Options VALUES (12, 2, 'Ice Cream', 0);
 
 --ActiveUser(ActivePhoneNumber, points)
 CREATE TABLE IF NOT EXISTS Active_User  ( -- [Active_User Table]
     phone_number BIGINT NOT NULL,
     points INT NOT NULL,
+    reports INT NOT NULL,
     PRIMARY KEY (phone_number)
 );
 
-INSERT INTO Active_User VALUES (5715550101, 10);
-INSERT INTO Active_User VALUES (7035550202, 12);
-INSERT INTO Active_User VALUES (2035550303, 3);
-INSERT INTO Active_User VALUES (5715550404, 22);
+INSERT INTO Active_User VALUES (5715550101, 10, 0);
+INSERT INTO Active_User VALUES (7035550202, 12, 0);
+INSERT INTO Active_User VALUES (2035550303, 3, 0);
+INSERT INTO Active_User VALUES (5715550404, 22, 1);
 
 
 --BannedUser(BannedPhoneNumber, Reason)
 CREATE TABLE IF NOT EXISTS Banned_User  ( -- [Banned_User Table]
     phone_number BIGINT NOT NULL,
     reason VARCHAR(99) NOT NULL,
+    reports INT NOT NULL,
     PRIMARY KEY (phone_number)
 );
 
-INSERT INTO Banned_User VALUES (2035550505, "profanity");
-INSERT INTO Banned_User VALUES (7035550606, "not cool enough");
+INSERT INTO Banned_User VALUES (2035550505, "profanity", 3);
+INSERT INTO Banned_User VALUES (7035550606, "not cool enough", 3);
 
 --SuspendedUser(BannedPhoneNumber, Reason) 
 CREATE TABLE IF NOT EXISTS Suspended_User  ( -- [Suspended_User Table]
     phone_number BIGINT NOT NULL,
     reason VARCHAR(99) NOT NULL,
     sus_time INT NOT NULL, --in seconds
+    reports INT NOT NULL,
     PRIMARY KEY (phone_number)
 );
 
-INSERT INTO Suspended_User VALUES (4345550707, "inapropriate", 604800);
-INSERT INTO Suspended_User VALUES (5715550808, "illegal", 1209600);
+INSERT INTO Suspended_User VALUES (4345550707, "inapropriate", 604800, 2);
+INSERT INTO Suspended_User VALUES (5715550808, "illegal", 1209600, 2);
 
 --AdminUser(AdminPhoneNumber, username) 
 CREATE TABLE IF NOT EXISTS Admin_User  ( -- [Admin_User Table]
     phone_number BIGINT NOT NULL,
     username VARCHAR(30) NOT NULL,
+    reports INT NOT NULL,
     PRIMARY KEY (phone_number)
 );
 
-INSERT INTO Admin_User VALUES (5715550909, "Justin_Is_Cool");
-INSERT INTO Admin_User VALUES (7035551010, "MikeCR7");
+INSERT INTO Admin_User VALUES (5715550909, "Justin_Is_Cool", 0);
+INSERT INTO Admin_User VALUES (7035551010, "MikeCR7", 0);
 
 -- PostCreator(post_id, phone_num)
 CREATE TABLE IF NOT EXISTS Post_Creator  ( -- [Post_Creator Table]
@@ -174,19 +178,19 @@ CREATE TABLE IF NOT EXISTS Post_Creator  ( -- [Post_Creator Table]
     PRIMARY KEY (post_id)
 );
 
-INSERT INTO Post_Creator VALUES (5715550101, 0);
 INSERT INTO Post_Creator VALUES (5715550101, 1);
-INSERT INTO Post_Creator VALUES (2035550303, 2);
-INSERT INTO Post_Creator VALUES (5715550404, 3);
-INSERT INTO Post_Creator VALUES (7035550202, 4);
+INSERT INTO Post_Creator VALUES (5715550101, 2);
+INSERT INTO Post_Creator VALUES (2035550303, 3);
+INSERT INTO Post_Creator VALUES (5715550404, 4);
 INSERT INTO Post_Creator VALUES (7035550202, 5);
-INSERT INTO Post_Creator VALUES (2035550303, 6);
-INSERT INTO Post_Creator VALUES (5715550404, 7);
-INSERT INTO Post_Creator VALUES (5715550101, 8);
-INSERT INTO Post_Creator VALUES (7035550202, 9);
-INSERT INTO Post_Creator VALUES (2035550303, 10);
-INSERT INTO Post_Creator VALUES (5715550404, 11);
-INSERT INTO Post_Creator VALUES (2035550303, 12);
-INSERT INTO Post_Creator VALUES (5715550404, 13);
-INSERT INTO Post_Creator VALUES (2035550303, 14);
-INSERT INTO Post_Creator VALUES (5715550404, 15);
+INSERT INTO Post_Creator VALUES (7035550202, 6);
+INSERT INTO Post_Creator VALUES (2035550303, 7);
+INSERT INTO Post_Creator VALUES (5715550404, 8);
+INSERT INTO Post_Creator VALUES (5715550101, 9);
+INSERT INTO Post_Creator VALUES (7035550202, 10);
+INSERT INTO Post_Creator VALUES (2035550303, 11);
+INSERT INTO Post_Creator VALUES (5715550404, 12);
+INSERT INTO Post_Creator VALUES (2035550303, 13);
+INSERT INTO Post_Creator VALUES (5715550404, 14);
+INSERT INTO Post_Creator VALUES (2035550303, 15);
+INSERT INTO Post_Creator VALUES (5715550404, 16);
