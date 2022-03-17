@@ -1,51 +1,57 @@
 -- Michael Yates (mjy5xy) and Justin Logan (jhl3mn)
 -- Post(post_id, Datetime, text, votes, post_report, post_type) 
+
 CREATE TABLE IF NOT EXISTS Post  ( -- [Post Table]
-    post_id INT NOT NULL,
+    post_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     post_time Datetime NOT NULL,
     post_text VARCHAR(99) NOT NULL,
     post_report INT NOT NULL,
     post_type VARCHAR(10) NOT NULL, -- text, poll, video, or picture
     PRIMARY KEY (post_id)
 );
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 5, 'my name is mike, and this is my first post.', 0, 'text');
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 10, 'my name is justin, check out this picture!!', 0, 'picture');
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 20, 'UVA Media is the Next Big Thing!! yes or no?', 0, 'poll');
+INSERT INTO Post VALUES (NULL, CURRENT_TIMESTAMP - 30, 'what do you think of this video', 0, 'video');
+
 
 -- Comment(Post_id, comment_text) 
 CREATE TABLE IF NOT EXISTS Comment ( -- [Comment Table]
-    post_id INT NOT NULL,
+    post_id INT UNSIGNED NOT NULL,
     post_text VARCHAR(99) NOT NULL,
     PRIMARY KEY (post_id)
 );
 
 -- Text_Post(Post_id, color)
 CREATE TABLE IF NOT EXISTS Text_Post ( -- [Text_Post Table]
-    post_id INT NOT NULL,
+    post_id INT UNSIGNED NOT NULL,
     color VARCHAR(30) NOT NULL,
     PRIMARY KEY (post_id)
 );
 
 -- Images(Post_id, image)
 CREATE TABLE IF NOT EXISTS Images ( -- [Images Table]
-    post_id INT NOT NULL,
-    color VARCHAR(30) NOT NULL,
+    post_id INT UNSIGNED NOT NULL,
     content varchar(1024),  -- store a reference to where the image is saved. 
     PRIMARY KEY (post_id)
 );
 
 -- Videos(Post_id, video)
-CREATE TABLE IF NOT EXISTS Images ( -- [Images Table]
-    post_id INT NOT NULL,
+CREATE TABLE IF NOT EXISTS Videos ( -- [Images Table]
+    post_id INT UNSIGNED NOT NULL,
     content varchar(1024),  -- store a reference to where the video is saved. 
     PRIMARY KEY (post_id)
 );
+
 --Poll_Post(Post_id, num_options)
 CREATE TABLE IF NOT EXISTS Poll_Post  ( -- [Poll_Post Table]
-    post_id INT NOT NULL,
+    post_id INT UNSIGNED NOT NULL,
     num_options INT NOT NULL,
     PRIMARY KEY (post_id)
 );
 --poll_options(Post_id, option_id, option_name, vote_count)
 CREATE TABLE IF NOT EXISTS Poll_Options  ( -- [Poll_Options Table]
-    post_id INT NOT NULL,
+    post_id INT UNSIGNED NOT NULL,
     option_id INT NOT NULL,
     option_name VARCHAR(30) NOT NULL,
     vote_count INT NOT NULL,
@@ -77,4 +83,10 @@ CREATE TABLE IF NOT EXISTS Admin_User  ( -- [Admin_User Table]
     PRIMARY KEY (phone_number)
 );
 
+-- PostCreator(post_id, phone_num)
+CREATE TABLE IF NOT EXISTS Post_Creator  ( -- [Post_Creator Table]
+    phone_number BIGINT NOT NULL,
+    post_id int UNSIGNED NOT NULL, 
+    PRIMARY KEY (post_id)
+);
 
