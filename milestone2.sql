@@ -9,26 +9,27 @@ CREATE TABLE IF NOT EXISTS Post  ( -- [Post Table]
     post_type VARCHAR(10) NOT NULL, -- text, poll, video, or picture
     PRIMARY KEY (post_id)
 );
-INSERT INTO Post VALUES (0, CURRENT_TIMESTAMP - 5, 'my name is mike, and this is my first post.', 0, 'text');
-INSERT INTO Post VALUES (1, CURRENT_TIMESTAMP - 10, 'my name is mike, and this is my second post.', 0, 'text');
-INSERT INTO Post VALUES (2, CURRENT_TIMESTAMP - 15, 'wow! i have 99 characters to work with', 0, 'text');
-INSERT INTO Post VALUES (3, CURRENT_TIMESTAMP - 20, 'some wierd characters are: !@#$%^&*(', 0, 'text');
+INSERT INTO Post VALUES (0, 20220313184701, 'my name is mike, and this is my first post.', 0, 'text');
+INSERT INTO Post VALUES (1, 20220314184711, 'my name is mike, and this is my second post.', 0, 'text');
+INSERT INTO Post VALUES (2, 20220314184721, 'wow! i have 99 characters to work with', 0, 'text');
+INSERT INTO Post VALUES (3, 20220314184751, 'some wierd characters are: !@#$%^&*(', 0, 'text');
 
-INSERT INTO Post VALUES (4, CURRENT_TIMESTAMP - 25, 'my name is justin, check out this picture!!', 0, 'picture');
-INSERT INTO Post VALUES (5, CURRENT_TIMESTAMP - 30, 'my name is justin, check out this second picture!!', 0, 'picture');
-INSERT INTO Post VALUES (6, CURRENT_TIMESTAMP - 35, 'picture of my dog!!', 0, 'picture');
-INSERT INTO Post VALUES (7, CURRENT_TIMESTAMP - 40, 'Heres another picture of Kunal!', 0, 'picture');
+INSERT INTO Post VALUES (4, 20220315184722, 'my name is justin, check out this picture!!', 0, 'picture');
+INSERT INTO Post VALUES (5, 20220315184754, 'my name is justin, check out this second picture!!', 0, 'picture');
+INSERT INTO Post VALUES (6, 20220316184701, 'picture of my dog!!', 0, 'picture');
+INSERT INTO Post VALUES (7, 20220316184755, 'Heres another picture of Kunal!', 0, 'picture');
 
-INSERT INTO Post VALUES (8, CURRENT_TIMESTAMP - 45, 'UVA Media is the Next Big Thing!! yes or no?', 0, 'poll');
-INSERT INTO Post VALUES (9, CURRENT_TIMESTAMP - 50, 'Best soccer player?', 0, 'poll');
-INSERT INTO Post VALUES (10, CURRENT_TIMESTAMP - 55, 'Best bastetball player in the East?', 0, 'poll');
-INSERT INTO Post VALUES (11, CURRENT_TIMESTAMP - 60, 'favorite food?', 0, 'poll');
+INSERT INTO Post VALUES (8, 20220316184757, 'UVA Media is the Next Big Thing!! yes or no?', 0, 'poll');
+INSERT INTO Post VALUES (9, 20220317184710, 'Best soccer player?', 0, 'poll');
+INSERT INTO Post VALUES (10, 20220317184721, 'Best bastetball player in the East?', 0, 'poll');
+INSERT INTO Post VALUES (11, 20220317184730, 'favorite food?', 0, 'poll');
 
-INSERT INTO Post VALUES (12, CURRENT_TIMESTAMP - 65, 'what do you think of this video', 0, 'video');
-INSERT INTO Post VALUES (13, CURRENT_TIMESTAMP - 70, 'quick video of my cat!', 0, 'video');
-INSERT INTO Post VALUES (14, CURRENT_TIMESTAMP - 75, 'me doing the rainbow remix', 0, 'video');
-INSERT INTO Post VALUES (15, CURRENT_TIMESTAMP - 80, 'best goal ive scored!', 0, 'video');
+INSERT INTO Post VALUES (12, 20220317184745, 'what do you think of this video', 0, 'video');
+INSERT INTO Post VALUES (13, 20220317184747, 'quick video of my cat!', 0, 'video');
+INSERT INTO Post VALUES (14, 20220317184749, 'me doing the rainbow remix', 0, 'video');
+INSERT INTO Post VALUES (15, 20220317184757, 'best goal ive scored!', 0, 'video');
 
+-- -80 = 35 seconds earlier 
 
 
 -- Comment(post_id, comment_id, comment_text) 
@@ -39,12 +40,12 @@ CREATE TABLE IF NOT EXISTS Comment ( -- [Comment Table]
     comment_text VARCHAR(99) NOT NULL,
     PRIMARY KEY (comment_id)
 );
-INSERT INTO Comment VALUES (0, 0, CURRENT_TIMESTAMP - 65, 'cool first post, mike!');
-INSERT INTO Comment VALUES (1, 4, CURRENT_TIMESTAMP - 65, 'justin, thats a cool picture!');
-INSERT INTO Comment VALUES (2, 7, CURRENT_TIMESTAMP - 65, 'kunal looks cool!');
-INSERT INTO Comment VALUES (3, 5, CURRENT_TIMESTAMP - 65, 'I liked the first picture mor than this one, justin');
-INSERT INTO Comment VALUES (4, 5, CURRENT_TIMESTAMP - 65, 'this one is still cool tho');
-INSERT INTO Comment VALUES (5, 13, CURRENT_TIMESTAMP - 65, 'funny cat video! good one!');
+INSERT INTO Comment VALUES (0, 0, 20220315184730, 'cool first post, mike!');
+INSERT INTO Comment VALUES (1, 4, 20220315184745, 'justin, thats a cool picture!');
+INSERT INTO Comment VALUES (2, 7, 20220316184720, 'kunal looks cool!');
+INSERT INTO Comment VALUES (3, 5, 20220316184740, 'I liked the first picture mor than this one, justin');
+INSERT INTO Comment VALUES (4, 5, 20220317184715, 'this one is still cool tho');
+INSERT INTO Comment VALUES (5, 13, 20220317184730, 'funny cat video! good one!');
 
 
 -- Text_Post(Post_id, color)
