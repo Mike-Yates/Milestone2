@@ -1,5 +1,5 @@
 -- AddComment 
-INSERT INTO 'Comment' VALUES (<comment_id>, <post_id>, <comment_time>, <comment_text>);
+INSERT INTO 'Comment' VALUES (<comment_id>, <post_id>, <comment_time>, <comment_text>, <votes>);
 INSERT INTO 'Comment_Creator' VALUES (<comment_id>, <phone_number>);
 
 -- AddPollPost     Note: Post(post_id, post_time, post_text, post_text, post_report, post_report) 
