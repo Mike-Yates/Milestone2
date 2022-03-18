@@ -33,20 +33,21 @@ INSERT INTO Post VALUES (16, 20220317184757, 'best goal ive scored!', 9, 0, 'vid
 -- -80 = 35 seconds earlier 
 
 
--- Comment(comment_id, post_id, comment_time, comment_text) 
+-- Comment(comment_id, post_id, comment_time, comment_text, votes) 
 CREATE TABLE IF NOT EXISTS Comment ( -- [Comment Table]
     comment_id INT UNSIGNED NOT NULL AUTO_INCREMENT, 
     post_id INT UNSIGNED NOT NULL,
     comment_time Datetime NOT NULL,
     comment_text VARCHAR(99) NOT NULL,
+    votes int NOT NULL,
     PRIMARY KEY (comment_id)
 );
-INSERT INTO Comment VALUES (1, 0, 20220315184730, 'cool first post, mike!');
-INSERT INTO Comment VALUES (2, 4, 20220315184745, 'justin, thats a cool picture!');
-INSERT INTO Comment VALUES (3, 7, 20220316184720, 'kunal looks cool!');
-INSERT INTO Comment VALUES (4, 5, 20220316184740, 'I liked the first picture mor than this one, justin');
-INSERT INTO Comment VALUES (5, 5, 20220317184715, 'this one is still cool tho');
-INSERT INTO Comment VALUES (6, 13, 20220317184730, 'funny cat video! good one!');
+INSERT INTO Comment VALUES (1, 0, 20220315184730, 'cool first post, mike!', 3);
+INSERT INTO Comment VALUES (2, 4, 20220315184745, 'justin, thats a cool picture!', 4);
+INSERT INTO Comment VALUES (3, 7, 20220316184720, 'kunal looks cool!', 1);
+INSERT INTO Comment VALUES (4, 5, 20220316184740, 'I liked the first picture mor than this one, justin', 0);
+INSERT INTO Comment VALUES (5, 5, 20220317184715, 'this one is still cool tho', 2);
+INSERT INTO Comment VALUES (6, 13, 20220317184730, 'funny cat video! good one!', 5);
 
 
 -- Text_Post(post_id, color)
