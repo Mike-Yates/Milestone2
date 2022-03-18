@@ -61,7 +61,7 @@ INSERT INTO Text_Post VALUES (3, 'red');
 INSERT INTO Text_Post VALUES (4, 'green');
 
 
--- Images(Post_id, image)
+-- Images(post_id, content)
 CREATE TABLE IF NOT EXISTS Images ( -- [Images Table]
     post_id INT UNSIGNED NOT NULL,
     content varchar(1024),  -- store a reference to where the image is saved. 
@@ -73,7 +73,7 @@ INSERT INTO Images VALUES (7, '/amazon/S3/bucken_name/picture_id6');
 INSERT INTO Images VALUES (8, '/amazon/S3/bucken_name/picture_id7');
 
 
--- Videos(Post_id, video)
+-- Videos(post_id, content)
 CREATE TABLE IF NOT EXISTS Videos ( -- [Images Table]
     post_id INT UNSIGNED NOT NULL,
     content varchar(1024),  -- store a reference to where the video is saved. 
@@ -149,7 +149,7 @@ CREATE TABLE IF NOT EXISTS Banned_User  ( -- [Banned_User Table]
 INSERT INTO Banned_User VALUES (2035550505, "profanity", 3);
 INSERT INTO Banned_User VALUES (7035550606, "not cool enough", 3);
 
--- SuspendedUser(BannedPhoneNumber, Reason) 
+-- SuspendedUser(BannedPhoneNumber, Reason, sus_time, reports) 
 CREATE TABLE IF NOT EXISTS Suspended_User  ( -- [Suspended_User Table]
     phone_number BIGINT NOT NULL,
     reason VARCHAR(99) NOT NULL,
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS Suspended_User  ( -- [Suspended_User Table]
 INSERT INTO Suspended_User VALUES (4345550707, "inapropriate", 604800, 2);
 INSERT INTO Suspended_User VALUES (5715550808, "illegal", 1209600, 2);
 
--- AdminUser(AdminPhoneNumber, username) 
+-- Admin_User(AdminPhoneNumber, username, reports) 
 CREATE TABLE IF NOT EXISTS Admin_User  ( -- [Admin_User Table]
     phone_number BIGINT NOT NULL,
     username VARCHAR(30) NOT NULL,
@@ -172,7 +172,7 @@ CREATE TABLE IF NOT EXISTS Admin_User  ( -- [Admin_User Table]
 INSERT INTO Admin_User VALUES (5715550909, "Justin_Is_Cool", 0);
 INSERT INTO Admin_User VALUES (7035551010, "MikeCR7", 0);
 
--- PostCreator(post_id, phone_number)
+-- Post_Creator(post_id, phone_number)
 CREATE TABLE IF NOT EXISTS Post_Creator  ( -- [Post_Creator Table]
     phone_number BIGINT NOT NULL,
     post_id int UNSIGNED NOT NULL, 
@@ -209,4 +209,3 @@ INSERT INTO Comment_Creator VALUES (2035550303, 3);
 INSERT INTO Comment_Creator VALUES (2035550303, 4);
 INSERT INTO Comment_Creator VALUES (7035550202, 5);
 INSERT INTO Comment_Creator VALUES (7035550202, 6);
-
