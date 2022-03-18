@@ -111,6 +111,9 @@ SELECT `content` FROM `Videos` WHERE 'post_id' = <post_id>; -- change post id ac
 -- GetUserScore
 SELECT `points` FROM `Active_User` WHERE 'post_id' = <post_id>; -- change post id accordingly 
 
+-- SortPostsByLikes 
+SELECT * FROM `Post` ORDER BY `votes` DESC
+
 -- Check constraints
 ALTER TABLE Active_User 
 ADD CONSTRAINT checkNumber
