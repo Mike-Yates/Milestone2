@@ -111,6 +111,25 @@ SELECT `content` FROM `Videos` WHERE 'post_id' = <post_id>; -- change post id ac
 -- GetUserScore
 SELECT `points` FROM `Active_User` WHERE 'post_id' = <post_id>; -- change post id accordingly 
 
+-- SortPostsByLikes 
+SELECT * FROM `Post` ORDER BY `votes` DESC
+
+-- stored procedures 
+DELIMITER $$
+CREATE PROCEDURE count_posts(OUT param1 INT)
+	SELECT COUNT(*) INTO param1 FROM Post; 
+$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE PROCEDURE count_users(OUT param1 INT)
+	SELECT COUNT(*) INTO param1 FROM Active_User; 
+$$
+DELIMITER ;
+
+
+
+
 -- Check constraints
 ALTER TABLE Active_User 
 ADD CONSTRAINT checkNumber
