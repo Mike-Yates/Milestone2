@@ -1,12 +1,16 @@
 -- AddComment 
 INSERT INTO 'Comment' VALUES (<comment_id>, <post_id>, <comment_time>, <comment_text>);
 
--- AddPollPost
-INSERT INTO Post VALUES (16, 20220317184757, 'best goal ive scored!', 0, 'video');
-INSERT INTO Poll_Post VALUES (<Post_id>, <num_options>);
-
+-- AddPollPost     Note: Post(post_id, post_time, post_text, post_text, post_report, post_report) 
+INSERT INTO Post VALUES (<post_id>, <post_time>, <post_text>, <post_text>, <post_report>, 'poll');
+INSERT INTO Post_Creator VALUES (<phone_number>, <post_id>);
+INSERT INTO Poll_Post VALUES (<post_id>, <num_options>);
+-- add poll options 
 
 -- AddTextPost 
+INSERT INTO Post VALUES (<post_id>, <post_time>, <post_text>, <post_text>, <post_report>, 'text');
+INSERT INTO Text_Post VALUES (<post_id>, <color>);
+
 -- AddImagePost
 -- AddVideoPost 
 -- AddUser
