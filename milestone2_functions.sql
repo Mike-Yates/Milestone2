@@ -94,3 +94,19 @@ SELECT `post_type` FROM `Post` WHERE post_id = <post_id> -- change post id accor
 -- GetVideoPost 
 
 -- GetUserScore
+
+ALTER TABLE Active_User 
+ADD CONSTRAINT checkNumber
+CHECK (phone_number >= 1000000000 AND phone_number <= 9999999999);
+
+ALTER TABLE Banned_User 
+ADD CONSTRAINT checkNumber
+CHECK (phone_number >= 1000000000 AND phone_number <= 9999999999);
+
+ALTER TABLE Suspended_User 
+ADD CONSTRAINT checkNumber
+CHECK (phone_number >= 1000000000 AND phone_number <= 9999999999);
+
+ALTER TABLE Admin_User 
+ADD CONSTRAINT checkNumber
+CHECK (phone_number >= 1000000000 AND phone_number <= 9999999999);
