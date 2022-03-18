@@ -1,27 +1,61 @@
 -- AddComment 
 INSERT INTO 'Comment' VALUES (<comment_id>, <post_id>, <comment_time>, <comment_text>);
+INSERT INTO 'Comment_Creator' VALUES (<phone_number>, <comment_id>);
 
 -- AddPollPost     Note: Post(post_id, post_time, post_text, post_text, post_report, post_report) 
-INSERT INTO Post VALUES (<post_id>, <post_time>, <post_text>, <post_text>, <post_report>, 'poll');
-INSERT INTO Post_Creator VALUES (<phone_number>, <post_id>);
-INSERT INTO Poll_Post VALUES (<post_id>, <num_options>);
--- add poll options 
+INSERT INTO 'Post' VALUES (<post_id>, <post_time>, <post_text>, <post_text>, <post_report>, 'poll');
+INSERT INTO 'Post_Creator' VALUES (<phone_number>, <post_id>);
+INSERT INTO 'Poll_Post' VALUES (<post_id>, <num_options>);
+
+-- AddPollOption 
+INSERT INTO 'Poll_Options' VALUES (post_id, <option_id>, <option_name>, <vote_count>);
 
 -- AddTextPost 
-INSERT INTO Post VALUES (<post_id>, <post_time>, <post_text>, <post_text>, <post_report>, 'text');
-INSERT INTO Text_Post VALUES (<post_id>, <color>);
+INSERT INTO 'Post' VALUES (<post_id>, <post_time>, <post_text>, <post_text>, <post_report>, 'text');
+INSERT INTO 'Post_Creator' VALUES (<phone_number>, <post_id>);
+INSERT INTO 'Text_Post' VALUES (<post_id>, <color>);
 
 -- AddImagePost
+INSERT INTO 'Post' VALUES (<post_id>, <post_time>, <post_text>, <post_text>, <post_report>, 'image');
+INSERT INTO 'Post_Creator' VALUES (<phone_number>, <post_id>);
+INSERT INTO 'Images' VALUES (<post_id>, <content>);
+
 -- AddVideoPost 
--- AddUser
+INSERT INTO 'Post' VALUES (<post_id>, <post_time>, <post_text>, <post_text>, <post_report>, 'video');
+INSERT INTO 'Post_Creator' VALUES (<phone_number>, <post_id>);
+INSERT INTO 'Videos' VALUES (<post_id>, <content>);
+
+-- AddActiveUser
+INSERT INTO 'Active_User' VALUES (<phone_number>, <points>, <reports>);
+
 -- AddAdmin
+INSERT INTO 'Admin_User' VALUES (<phone_number>, <username>, <reports>);
 
 
 -- DeleteComment 
+DELETE FROM `Comment` WHERE `comment_id`=<comment_id>;
+
 -- DeletePollPost
+DELETE FROM 'Post' WHERE `post_id`=<post_id>;  -- 
+
+-- INSERT INTO 'Post_Creator' VALUES (<phone_number>, <post_id>);
+-- INSERT INTO 'Poll_Post' VALUES (<post_id>, <num_options>);
+
+-- DeletePollOptions
+-- INSERT INTO 'Poll_Options' VALUES (post_id, <option_id>, <option_name>, <vote_count>);
+
 -- DeleteTextPost 
+DELETE FROM 'Post' WHERE `post_id`=<post_id>;
+DELETE FROM 'Post_Creator' WHERE `post_id`=<post_id>; 
+DELETE FROM 'Text_Post' WHERE `post_id`=<post_id>; 
+
 -- DeleteImagePost
+DELETE FROM 'Post' WHERE `post_id`=<post_id>;
+DELETE FROM 'Post_Creator' WHERE `post_id`=<post_id>; 
+DELETE FROM 'Images' WHERE `post_id`=<post_id>; 
+
 -- DeleteVideoPost 
+
 -- DeleteUser
 -- DeleteAdmin
 
