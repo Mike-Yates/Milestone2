@@ -35,13 +35,13 @@ INSERT INTO Post VALUES (18, 20220314184722, 'Im so cool', 5, 0, 'text');
 INSERT INTO Post VALUES (19, 20220314184725, 'lalalalala', 0, 0,'text');
 INSERT INTO Post VALUES (20, 20220314184757, 'go hoos!!!!!', 2, 0, 'text');
 
-INSERT INTO Post VALUES (21, 20220315184788, 'its me!!', 3, 1, 'picture');
+INSERT INTO Post VALUES (21, 20220315184722, 'its me!!', 3, 1, 'picture');
 INSERT INTO Post VALUES (22, 20220315184759, 'love my family', 4, 0, 'picture');
 INSERT INTO Post VALUES (23, 20220316184703, 'went to the beach!!', 1, 0, 'picture');
 INSERT INTO Post VALUES (24, 20220316184754, 'We had so much fun!', 2, 0, 'picture');
 
 INSERT INTO Post VALUES (25, 20220316184756, 'Whats your favorite color?', 5, 0, 'poll');
-INSERT INTO Post VALUES (26, 20220317184767, 'Do people like me? (yes/yes)', 10, 0, 'poll');
+INSERT INTO Post VALUES (26, 20220317184756, 'Do people like me? (yes/yes)', 10, 0, 'poll');
 INSERT INTO Post VALUES (27, 20220317184725, 'Whats better, chocolate or vanilla?', 4, 0, 'poll');
 INSERT INTO Post VALUES (28, 20220317184732, 'Do you watch sports?', 10, 0, 'poll');
 
@@ -72,8 +72,8 @@ INSERT INTO Comment VALUES (7, 17, 20220315184740, 'me too!!!', 10);
 INSERT INTO Comment VALUES (8, 18, 20220315184733, 'no youre not haha', 9);
 INSERT INTO Comment VALUES (9, 22, 20220316184444, 'such a good picture', 5);
 INSERT INTO Comment VALUES (10, 25, 20220316184555, 'Brown!!', 1);
-INSERT INTO Comment VALUES (11, 25, 202203171847222, 'Black is mine', 4);
-INSERT INTO Comment VALUES (12, 31, 202203171847134, 'Wow, well done', 2);
+INSERT INTO Comment VALUES (11, 25, 20220317184555, 'Black is mine', 4);
+INSERT INTO Comment VALUES (12, 31, 20220317184744, 'Wow, well done', 2);
 
 
 -- Text_Post(post_id, color)
