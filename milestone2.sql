@@ -330,3 +330,43 @@ INSERT INTO Comment_Creator VALUES (9, 5715550995);
 INSERT INTO Comment_Creator VALUES (10, 2035550997);
 INSERT INTO Comment_Creator VALUES (11, 5715550999);
 INSERT INTO Comment_Creator VALUES (12, 7035550202);
+
+
+
+-- stored procedures 
+DELIMITER $$
+CREATE PROCEDURE count_posts(OUT param1 INT)
+	SELECT COUNT(*) INTO param1 FROM Post; 
+$$
+DELIMITER ;
+
+DELIMITER $$
+CREATE PROCEDURE count_users(OUT param1 INT)
+	SELECT COUNT(*) INTO param1 FROM Active_User; 
+$$
+DELIMITER ;
+
+-- Check constraints
+ALTER TABLE Active_User 
+ADD CONSTRAINT checkNumber
+CHECK (phone_number >= 1000000000 AND phone_number <= 9999999999);
+
+ALTER TABLE Banned_User 
+ADD CONSTRAINT checkNumber
+CHECK (phone_number >= 1000000000 AND phone_number <= 9999999999);
+
+ALTER TABLE Suspended_User 
+ADD CONSTRAINT checkNumber
+CHECK (phone_number >= 1000000000 AND phone_number <= 9999999999);
+
+ALTER TABLE Admin_User 
+ADD CONSTRAINT checkNumber
+CHECK (phone_number >= 1000000000 AND phone_number <= 9999999999);
+
+-- Trigger
+DELIMITER $$
+CREATE TRIGGER removeUserTrigger
+AFTER INSERT ON Banned_User
+DELETE FROM Active_User WHERE Banned_User.phone_number = Active_User.phone_number
+$$
+DELIMITER ;
