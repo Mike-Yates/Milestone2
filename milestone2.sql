@@ -49,7 +49,7 @@ INSERT INTO Comment VALUES (5, 5, 20220317184715, 'this one is still cool tho');
 INSERT INTO Comment VALUES (6, 13, 20220317184730, 'funny cat video! good one!');
 
 
--- Text_Post(Post_id, color)
+-- Text_Post(post_id, color)
 CREATE TABLE IF NOT EXISTS Text_Post ( -- [Text_Post Table]
     post_id INT UNSIGNED NOT NULL,
     color VARCHAR(30) NOT NULL,
@@ -172,7 +172,7 @@ CREATE TABLE IF NOT EXISTS Admin_User  ( -- [Admin_User Table]
 INSERT INTO Admin_User VALUES (5715550909, "Justin_Is_Cool", 0);
 INSERT INTO Admin_User VALUES (7035551010, "MikeCR7", 0);
 
--- PostCreator(post_id, phone_num)
+-- PostCreator(post_id, phone_number)
 CREATE TABLE IF NOT EXISTS Post_Creator  ( -- [Post_Creator Table]
     phone_number BIGINT NOT NULL,
     post_id int UNSIGNED NOT NULL, 
@@ -195,3 +195,18 @@ INSERT INTO Post_Creator VALUES (2035550303, 13);
 INSERT INTO Post_Creator VALUES (5715550404, 14);
 INSERT INTO Post_Creator VALUES (2035550303, 15);
 INSERT INTO Post_Creator VALUES (5715550404, 16);
+
+
+CREATE TABLE IF NOT EXISTS Comment_Creator  ( -- [Comment_Creator Table]
+    phone_number BIGINT NOT NULL,
+    comment_id int UNSIGNED NOT NULL, 
+    PRIMARY KEY (comment_id)
+);
+
+INSERT INTO Comment_Creator VALUES (5715550101, 1);
+INSERT INTO Comment_Creator VALUES (5715550101, 2);
+INSERT INTO Comment_Creator VALUES (2035550303, 3);
+INSERT INTO Comment_Creator VALUES (2035550303, 4);
+INSERT INTO Comment_Creator VALUES (7035550202, 5);
+INSERT INTO Comment_Creator VALUES (7035550202, 6);
+
