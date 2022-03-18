@@ -109,6 +109,7 @@ SELECT `content` FROM `Images` WHERE 'post_id' = <post_id>; -- change post id ac
 SELECT `content` FROM `Videos` WHERE 'post_id' = <post_id>; -- change post id accordingly 
 
 -- GetUserScore
+SELECT `points` FROM `Active_User` WHERE 'post_id' = <post_id>; -- change post id accordingly 
 
 ALTER TABLE Active_User 
 ADD CONSTRAINT checkNumber
@@ -125,4 +126,4 @@ CHECK (phone_number >= 1000000000 AND phone_number <= 9999999999);
 ALTER TABLE Admin_User 
 ADD CONSTRAINT checkNumber
 CHECK (phone_number >= 1000000000 AND phone_number <= 9999999999);
-SELECT `points` FROM `Active_User` WHERE 'post_id' = <post_id>; -- change post id accordingly 
+
