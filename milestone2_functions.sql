@@ -128,3 +128,10 @@ ALTER TABLE Admin_User
 ADD CONSTRAINT checkNumber
 CHECK (phone_number >= 1000000000 AND phone_number <= 9999999999);
 
+-- Trigger
+--DELIMITER $$
+--CREATE TRIGGER removeUserTrigger
+--BEFORE INSERT ON Banned_User
+--DELETE FROM 'Active_User' WHERE `phone_number`= <phone_number>; 
+--$$
+--DELIMITER ;
