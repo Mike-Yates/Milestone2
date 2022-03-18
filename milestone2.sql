@@ -106,15 +106,15 @@ CREATE TABLE IF NOT EXISTS Poll_Options  ( -- [Poll_Options Table]
     PRIMARY KEY (post_id, option_id)
 );
 
--- 'UVA Media is the Next Big Thing!! yes or no?
+-- UVA Media is the Next Big Thing!! yes or no?
 INSERT INTO Poll_Options VALUES (9, 0, 'yes', 0);
 INSERT INTO Poll_Options VALUES (9, 1, 'no', 0);
--- 'Best soccer player?'
+-- Best soccer player?
 INSERT INTO Poll_Options VALUES (10, 0, 'Messi', 0);
 INSERT INTO Poll_Options VALUES (10, 1, 'Ronaldo', 0);
 INSERT INTO Poll_Options VALUES (10, 2, 'Maguire', 0);
 INSERT INTO Poll_Options VALUES (10, 3, 'Mbappe', 0);
--- 'Best bastetball player in the East?
+-- Best bastetball player in the East?
 INSERT INTO Poll_Options VALUES (11, 0, 'Tatum', 0);
 INSERT INTO Poll_Options VALUES (11, 1, 'Embiid', 0);
 INSERT INTO Poll_Options VALUES (11, 2, 'Antetokounmpo', 0);
@@ -174,38 +174,38 @@ INSERT INTO Admin_User VALUES (7035551010, "MikeCR7", 0);
 
 -- Post_Creator(post_id, phone_number)
 CREATE TABLE IF NOT EXISTS Post_Creator  ( -- [Post_Creator Table]
-    phone_number BIGINT NOT NULL,
     post_id int UNSIGNED NOT NULL, 
+    phone_number BIGINT NOT NULL,
     PRIMARY KEY (post_id)
 );
 
-INSERT INTO Post_Creator VALUES (5715550101, 1);
-INSERT INTO Post_Creator VALUES (5715550101, 2);
-INSERT INTO Post_Creator VALUES (2035550303, 3);
-INSERT INTO Post_Creator VALUES (5715550404, 4);
-INSERT INTO Post_Creator VALUES (7035550202, 5);
-INSERT INTO Post_Creator VALUES (7035550202, 6);
-INSERT INTO Post_Creator VALUES (2035550303, 7);
-INSERT INTO Post_Creator VALUES (5715550404, 8);
-INSERT INTO Post_Creator VALUES (5715550101, 9);
-INSERT INTO Post_Creator VALUES (7035550202, 10);
-INSERT INTO Post_Creator VALUES (2035550303, 11);
-INSERT INTO Post_Creator VALUES (5715550404, 12);
-INSERT INTO Post_Creator VALUES (2035550303, 13);
-INSERT INTO Post_Creator VALUES (5715550404, 14);
-INSERT INTO Post_Creator VALUES (2035550303, 15);
-INSERT INTO Post_Creator VALUES (5715550404, 16);
+INSERT INTO Post_Creator VALUES (1, 5715550101);
+INSERT INTO Post_Creator VALUES (2, 5715550101);
+INSERT INTO Post_Creator VALUES (3, 2035550303);
+INSERT INTO Post_Creator VALUES (4, 5715550404);
+INSERT INTO Post_Creator VALUES (5, 7035550202);
+INSERT INTO Post_Creator VALUES (6, 7035550202);
+INSERT INTO Post_Creator VALUES (7, 2035550303);
+INSERT INTO Post_Creator VALUES (8, 5715550404);
+INSERT INTO Post_Creator VALUES (9, 5715550101);
+INSERT INTO Post_Creator VALUES (10, 7035550202);
+INSERT INTO Post_Creator VALUES (11, 2035550303);
+INSERT INTO Post_Creator VALUES (12, 5715550404);
+INSERT INTO Post_Creator VALUES (13, 2035550303);
+INSERT INTO Post_Creator VALUES (14, 5715550404);
+INSERT INTO Post_Creator VALUES (15, 2035550303);
+INSERT INTO Post_Creator VALUES (16, 5715550404);
 
 
 CREATE TABLE IF NOT EXISTS Comment_Creator  ( -- [Comment_Creator Table]
-    phone_number BIGINT NOT NULL,
-    comment_id int UNSIGNED NOT NULL, 
+    comment_id int UNSIGNED NOT NULL,
+    phone_number BIGINT NOT NULL, 
     PRIMARY KEY (comment_id)
 );
 
-INSERT INTO Comment_Creator VALUES (5715550101, 1);
-INSERT INTO Comment_Creator VALUES (5715550101, 2);
-INSERT INTO Comment_Creator VALUES (2035550303, 3);
-INSERT INTO Comment_Creator VALUES (2035550303, 4);
-INSERT INTO Comment_Creator VALUES (7035550202, 5);
-INSERT INTO Comment_Creator VALUES (7035550202, 6);
+INSERT INTO Comment_Creator VALUES (1, 5715550101);
+INSERT INTO Comment_Creator VALUES (2, 5715550101);
+INSERT INTO Comment_Creator VALUES (3, 2035550303);
+INSERT INTO Comment_Creator VALUES (4, 2035550303);
+INSERT INTO Comment_Creator VALUES (5, 7035550202);
+INSERT INTO Comment_Creator VALUES (6, 7035550202);
