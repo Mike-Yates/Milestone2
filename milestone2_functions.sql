@@ -8,7 +8,7 @@ INSERT INTO 'Post_Creator' VALUES (<phone_number>, <post_id>);
 INSERT INTO 'Poll_Post' VALUES (<post_id>, <num_options>);
 
 -- AddPollOption 
-INSERT INTO 'Poll_Options' VALUES (post_id, <option_id>, <option_name>, <vote_count>);
+INSERT INTO 'Poll_Options' VALUES (<post_id>, <option_id>, <option_name>, <vote_count>);
 
 -- AddTextPost 
 INSERT INTO 'Post' VALUES (<post_id>, <post_time>, <post_text>, <post_text>, <post_report>, 'text');
@@ -36,13 +36,12 @@ INSERT INTO 'Admin_User' VALUES (<phone_number>, <username>, <reports>);
 DELETE FROM `Comment` WHERE `comment_id`=<comment_id>;
 
 -- DeletePollPost
-DELETE FROM 'Post' WHERE `post_id`=<post_id>;  -- 
+DELETE FROM 'Post' WHERE `post_id`=<post_id>;  
+DELETE FROM 'Post_Creator' WHERE `post_id`=<post_id>; 
+DELETE FROM 'Poll_Post' WHERE `post_id`=<post_id>; 
 
--- INSERT INTO 'Post_Creator' VALUES (<phone_number>, <post_id>);
--- INSERT INTO 'Poll_Post' VALUES (<post_id>, <num_options>);
+DELETE FROM 'Poll_Options' WHERE `post_id`=<post_id>; 
 
--- DeletePollOptions
--- INSERT INTO 'Poll_Options' VALUES (post_id, <option_id>, <option_name>, <vote_count>);
 
 -- DeleteTextPost 
 DELETE FROM 'Post' WHERE `post_id`=<post_id>;
@@ -55,9 +54,15 @@ DELETE FROM 'Post_Creator' WHERE `post_id`=<post_id>;
 DELETE FROM 'Images' WHERE `post_id`=<post_id>; 
 
 -- DeleteVideoPost 
+DELETE FROM 'Post' WHERE `post_id`=<post_id>;
+DELETE FROM 'Post_Creator' WHERE `post_id`=<post_id>; 
+DELETE FROM 'Videos' WHERE `post_id`=<post_id>; 
 
--- DeleteUser
+-- DeleteActiveUser
+DELETE FROM 'Active_User' WHERE `phone_number`=<phone_number>; 
+
 -- DeleteAdmin
+DELETE FROM 'Admin_User' WHERE `phone_number`=<phone_number>; 
 
 
 -- UpdateUserReports
@@ -75,7 +80,7 @@ SELECT `post_time` FROM `Post` WHERE post_id = <post_id> -- change post id accor
 -- GetPostText 
 SELECT `post_text` FROM `Post` WHERE post_id = <post_id> -- change post id accordingly 
 
--- GetPostReporNumber
+-- GetPostReportNumber
 SELECT `post_report` FROM `Post` WHERE post_id = <post_id> -- change post id accordingly 
 
 -- GetPostType
